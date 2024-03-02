@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #ffb5fa, #fff2b9);
+    font-family: 'Times New Roman', Verdana, sans-serif;
+}
+
+.container {
+    position: relative;
+    height: 5rem;
+}
+
+.container .search {
+    background-color: transparent;
+    border: none;
+    transition: width 0.4s ease-in-out;
+    height: 3rem;
+    width: 3rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
+
+.container button {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    width: 3rem;
+    transition: all 0.4s ease-in-out;
+    outline: none;
+    border-radius: 0.5rem;
+    background-color: rgb(213, 109, 158);
+    margin-left: 8px;
+}
+
+.container.active .search {
+    width: 20rem;
+}
+
+.container.active button {
+    transform: translateX(20rem); 
+    background-color: #dfffb5; 
+}
+
+.container .fa-times,
+.container .fa-search {
+    transition: opacity 0.4s ease-in-out;
+}
+
+.container .fa-times {
+    opacity: 0;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 1.85rem;
+}
+
+.container .fa-times.active,
+.container .fa-search:not(.active) {
+    opacity: 1;
+}
+
+.container .fa-search.active {
+    opacity: 0;
+}
